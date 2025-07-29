@@ -73,21 +73,21 @@ STEP 3: Add a title and description and click "Create Pull Reqeust".
 
 CODE REVIEW AND MERGE PULL REQUEST
 
-STEP 1: Go to the Pull Request (PR) in GitHub, then the Files Changed tab.
-STEP 2: Browse the changes, leave comments.
-STEP 3: Click Review Changes and choose "Approve" or "Request Changes"
+STEP 1: Go to the Pull Request (PR) in GitHub, then the Files Changed tab.  
+STEP 2: Browse the changes, leave comments.  
+STEP 3: Click Review Changes and choose "Approve" or "Request Changes"  
 
 MAKE CHANGES (OPTIONAL)
 
 If requested to make changes, you do it in your local branch (add-model).
 
-STEP 1: Update the code in the add-model branch.
-STEP 2: Commit with a message "fixed thing"
-STEP 3: Push the changes to the server.
+STEP 1: Update the code in the add-model branch.  
+STEP 2: Commit with a message "fixed thing"  
+STEP 3: Push the changes to the server.  
 
 The PR updates automatically.
 
 APPROVAL
 
-STEP 1: Upon a approval, we click "Merge Pull Request"
-STEP 2: Delete the feature branch (add-model) if no longer needed.
+STEP 1: Upon a approval, we click "Merge Pull Request"  
+STEP 2: Delete the feature branch (add-model) if no longer needed.  
