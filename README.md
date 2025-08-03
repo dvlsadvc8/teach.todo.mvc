@@ -10,7 +10,7 @@ STEP 2: Install Git (https://github.com/git-for-windows/git/releases/download/v2
 STEP 3: Create a Repository in Github named teach.todo.mvc  
 STEP 4: Locate the green "Code" button and copy the URL there.  
 STEP 5: Open visual studio and select "clone repository". Enter the URL copied from the prior step.  
-STEP 6: In Visual Studio, click File > New > Project (ASP.NET Core Web App Model-View-Controller) (make sure you see C# at the bottom) 
+STEP 6: In Visual Studio, click File > New > Project (ASP.NET Core Web App Model-View-Controller) (make sure you see C# at the bottom)   
 STEP 7: In the "Git Changes" panel, click the + symbol next to "Changes" to "Stage All"  
 STEP 8: Type a commit message like "Initial commit - new mvc project". Click commit. (say yes to any prompt asking to save)
 
