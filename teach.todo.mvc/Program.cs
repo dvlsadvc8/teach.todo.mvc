@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using teach.todo.mvc.Models;
+using teach.todo.mvc.Data;
+using teach.todo.mvc.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Register EF Core with SQL Server LocalDB
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
