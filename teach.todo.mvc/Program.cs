@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using teach.todo.mvc.Models;
 using teach.todo.mvc.Data;
-using teach.todo.mvc.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +36,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Todo}/{action=Index}/{id?}");
 
 app.Run();

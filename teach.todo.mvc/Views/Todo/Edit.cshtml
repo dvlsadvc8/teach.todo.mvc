@@ -1,0 +1,16 @@
+﻿@model teach.todo.mvc.Models.TodoItem
+
+<h2>Edit Todo</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label>Title</label>
+        <input asp-for="Title" />
+    </div>
+    <div>
+        <label>Is Complete</label>
+        <input asp-for="IsComplete" type="checkbox" />
+    </div>
+    <button type="submit">Save</button>
+</form>
