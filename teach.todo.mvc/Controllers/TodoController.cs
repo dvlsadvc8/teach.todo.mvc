@@ -7,6 +7,7 @@ public class TodoController : Controller
 {
     private readonly AppDbContext _context;
 
+    // Constructor
     public TodoController(AppDbContext context)
     {
         _context = context;
