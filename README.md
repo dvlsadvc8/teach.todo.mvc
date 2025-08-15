@@ -91,3 +91,73 @@ APPROVAL
 
 STEP 1: Upon a approval, we click "Merge Pull Request"  
 STEP 2: Delete the feature branch (add-model) if no longer needed.  
+
+THAT'S THE BASIC WORKFLOW OF SOFTWARE DEVELOPMENT
+
+There are many more things to build on this. Requirements gathering, analysis, work definition, estimation (AGILE - SCRUM/KANBAN etc, CMMI and more methodologies), unit testing, UI testing, automated builds, and deployment.
+
+ENTITY FRAMEWORK SETUP
+
+
+
+
+CONTROLLERS AND VIEWS
+
+Next, we add Controllers and Views. Controllers are the traffic cops that coordinate requests, the merging of data (models) with presentation (views) to return html to the browser. Controllers have actions, which are just a type of method, that handle requests.
+
+The ASP.NET Core MVC pipeline works like this:
+
+1. User sends a request (like /Todo/Create).
+2. Routing picks the right controller and action method.
+3. Model binding fills method parameters from the form, URL, etc.
+4. Model validation checks for things like required fields.
+5. Action runs your logic (e.g., save to database).
+6. View is returned, Razor renders it as HTML.
+7. User sees the result in the browser.
+
+ADDING A CONTROLLER AND ACTION
+
+STEP 1: Right click the Controllers folder and click "Add Controller..." -> MVC Controller - Empty. An empty controller is created.
+STEP 2: Add the following code:
+
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
+    using teach.todo.mvc.Data;
+    using teach.todo.mvc.Models;
+
+    public class TodoController : Controller
+    {
+        private readonly AppDbContext _context;
+
+        // Constructor
+        public TodoController(AppDbContext context)
+        {
+            _context = context;
+        }
+    
+        public async Task<IActionResult> Index()
+        {
+            var todos = await _context.TodoItems.ToListAsync();
+            return View(todos);
+        }
+    
+        public IActionResult Create()
+        {
+            return View();
+        }
+    
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(TodoItem item)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(item);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(item);
+        }
+    }
+
+Our class is a TodoController, that inherits from Controller, and receives the AppDbContext from ASP.NET Dependency Injection in it's constructor. We assign the context received to a private _context variable that only our class can see and use.
